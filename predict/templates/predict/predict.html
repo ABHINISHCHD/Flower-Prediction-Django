@@ -1,0 +1,90 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+   
+</head>
+<body>
+  <nav class="navbar bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <h4>Django</h4>
+      </a>
+    </div>
+  </nav>
+
+<!--<div class="container pt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+        <h1>Iris Predition</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit">
+        </form>
+     </div>
+    </div>
+</div>
+
+-->
+
+
+{% if result %}
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Flower Predition</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Saple Length :   {{saple_length}}</p><br>
+            <p>Saple Width  :   {{saple_width}}</p><br>
+            <p>Patle Length :   {{patle_length}}</p><br>
+            <p>Patle Width  :   {{patle_length}}</p><br>
+            <p>Result       :   {{result}}</p><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+<div class="container w-25">
+<form action=""  method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="Saple_Length" class="form-label">Sepal Length</label>
+      <input type="number" class="form-control" step=".01"  name="Saple_Length" required >      
+    </div>
+    <div class="mb-3">
+        <label for="Saple_Width" class="form-label">Sepal Width</label>
+        <input type="number" class="form-control" step=".01"  name="Saple_Width" required>      
+    </div>
+    <div class="mb-3">
+        <label for="Patle_Length" class="form-label">Patle Length</label>
+        <input type="number" class="form-control" step=".01" name="Patle_Length" required>      
+    </div>
+    <div class="mb-3">
+        <label for="Patle_Width" class="form-label">Patle Width</label>
+        <input type="number" class="form-control" step=".01"  name="Patle_Width" required>      
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+</body>
+</html>
